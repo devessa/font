@@ -1,4 +1,4 @@
-.PHONY: build clean copy all
+.PHONY: build clean copy all test
 PLAN=V5
 
 all: copy
@@ -15,3 +15,9 @@ clean:
 	rm -rf bunni bunniq bunnit
 	rm -rf iosevka/dist
 	rm -rf iosevka/.build
+
+test:
+	@echo -e "\033[1m abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890-=!@#\$%^&*()[]{}\|:;'\"\"'.>/?,< \033[0m"
+	@echo -e "\033[3m abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890-=!@#\$%^&*()[]{}\|:;'\"\"'.>/?,< \033[0m"
+	@echo -e "\033[3m\033[1m abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890-=!@#\$%^&*()[]{}\|:;'\"\"'.>/?,< \033[0m"
+	@echo -e " abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890-=!@#\$%^&*()[]{}\|:;'\"\"'.>/?,< \033[0m"
