@@ -7,6 +7,7 @@ copy: build
 	cp -r ./bunni*/ttf ~/.local/share/fonts/bunnifonts
 
 build: clean
+	cd VERSIONS; ./generateVersion.ts
 	rm -rf iosevka/private-build-plans.toml
 	cp VERSIONS/$(PLAN).toml iosevka/private-build-plans.toml
 	cd iosevka; npm install; npm run build -- ttf::bunni && cp -r dist/bunni ../; npm run build -- ttf::bunnit && cp -r dist/bunnit ../; npm run build -- ttf::bunniq && cp -r dist/bunniq ../;
