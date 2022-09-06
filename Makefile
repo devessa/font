@@ -1,5 +1,5 @@
 .PHONY: build clean copy all test
-PLAN=V6
+PLAN=V7
 
 all: copy
 
