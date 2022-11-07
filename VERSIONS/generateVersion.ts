@@ -3,37 +3,38 @@
 type TOML = string[][];
 
 const fontAmount = 3;
-const fontNames = ["bunni", "bunnit", "bunniq"];
+const fontNames = ['bunni', 'bunnit', 'bunniq'];
 
 const headers: TOML = [
   [
-    "[buildPlans.bunni]",
+    '[buildPlans.bunni]',
     'family = "bunni"',
     'spacing = "normal"',
     'serifs = "sans"',
-    "no-cv-ss = true",
-    "export-glyph-names = true",
+    'no-cv-ss = true',
+    'export-glyph-names = true',
   ],
   [
-    "[buildPlans.bunnit]",
+    '[buildPlans.bunnit]',
     'family = "bunnit"',
     'spacing = "term"',
     'serifs = "sans"',
-    "no-cv-ss = true",
-    "export-glyph-names = true",
+    'no-cv-ss = true',
+    'export-glyph-names = true',
   ],
   [
-    "[buildPlans.bunniq]",
+    '[buildPlans.bunniq]',
     'family = "bunniq"',
     'spacing = "quasi-proportional-extension-only"',
     'serifs = "sans"',
-    "no-cv-ss = true",
-    "export-glyph-names = true",
+    'no-cv-ss = true',
+    'export-glyph-names = true',
   ],
 ];
 
 const rulesNormal: TOML = [
   ['capital-d = "more-rounded-serifless"'],
+  ['capital-w = "curly"'],
   ['capital-z = "curly-serifless"'],
   ['capital-x = "straight-serifless"'],
   ['capital-q = "horizontal-tailed"'],
@@ -42,10 +43,10 @@ const rulesNormal: TOML = [
   ['capital-c = "serifless"'],
   ['capital-j = "flat-hook-serifed"'],
   ['capital-b = "standard-serifless"'],
-//  ['capital-g = "toothless-rounded-serifless-hooked"'],
+  //  ['capital-g = "toothless-rounded-serifless-hooked"'],
   ['capital-g = "toothless-corner-serifless-hookless"'],
   ['capital-k = "straight-serifless"'],
-  ['capital-y = "curly-serifless"'],
+  ['capital-y = "straight-serifless"'],
   ['capital-u = "toothless-corner"'],
   ['capital-n = "asymmetric"'],
   ['capital-r = "curly"'],
@@ -55,21 +56,22 @@ const rulesNormal: TOML = [
   ['d = "toothed-serifless"'],
   ['f = "flat-hook"'],
   ['g = "single-storey-earless-corner-flat-hook"'],
-//  ['g = "single-storey-flat-hook-serifless"'],
-  ['i = "serifed-flat-tailed"'],
-  ['j = "serifed"'],
+  //  ['g = "single-storey-flat-hook-serifless"'],
+  ['i = "hooky"'],
+  ['j = "flat-hook-serifed"'],
   ['k = "straight-serifless"'],
   ['l = "tailed-serifed"'],
   ['m = "normal"'],
   ['n = "straight"'],
   ['q = "earless-corner"'],
   ['p = "eared"'],
-//  ['r = "corner-hooked"'],
+  //  ['r = "corner-hooked"'],
   ['r = "serifless"'],
   ['s = "serifless"'],
   ['t = "standard-short-neck2"'],
   ['u = "toothed"'],
   ['v = "straight"'],
+  ['w = "straight"'],
   ['x = "straight-serifless"'],
   ['y = "straight-turn"'],
   ['z = "curly-serifless"'],
@@ -87,10 +89,10 @@ const rulesNormal: TOML = [
   ['three = "two-arcs"'],
   ['four = "semi-open-non-crossing"'],
   ['five = "vertical-upper-left-bar"'],
-  ['six = "closed-contour"'],
+  ['six = "straight-bar"'],
   ['seven = "curly-serifed"'],
   ['eight = "crossing"'],
-  ['nine = "closed-contour"'],
+  ['nine = "straight-bar"'],
   ['zero = "slashed-split"'],
   ['asterisk = "penta-low"'],
   ['underscore = "low"'],
@@ -110,7 +112,7 @@ const rulesNormal: TOML = [
   ['question = "smooth"'],
   ['punctuation-dot = "round"'],
   ['diacritic-dot = "round"'],
-  ['lig-equal-chain = "without-notch"']
+  ['lig-equal-chain = "without-notch"'],
 ];
 
 const rulesItalic: TOML = [
@@ -125,69 +127,69 @@ const rulesItalic: TOML = [
   ['m = "normal"'],
   ['t = "standard"'],
   ['u = "toothed"'],
-  ['w = "straight"'],
-  ['y = "straight-turn"'],
+  ['w = "curly"'],
+  ['y = "cursive"'],
   ['z = "curly-serifless"'],
 ];
 
 const footers: TOML = [
   [
-    "[buildPlans.bunni.widths.normal]",
-    "shape = 600",
-    "menu = 5",
+    '[buildPlans.bunni.widths.normal]',
+    'shape = 600',
+    'menu = 5',
     'css = "normal"',
-    "\n",
-    "[buildPlans.bunni.metric-override]",
-    "powerlineScaleX = 1",
-    "powerlineScaleY = 1",
-    "\n",
-    "[buildPlans.bunni.ligations]",
+    '\n',
+    '[buildPlans.bunni.metric-override]',
+    'powerlineScaleX = 1',
+    'powerlineScaleY = 1',
+    '\n',
+    '[buildPlans.bunni.ligations]',
     'inherits = "calt"',
   ],
   [
-    "[buildPlans.bunnit.widths.normal]",
-    "shape = 600",
-    "menu = 5",
+    '[buildPlans.bunnit.widths.normal]',
+    'shape = 600',
+    'menu = 5',
     'css = "normal"',
-    "\n",
-    "[buildPlans.bunnit.metric-override]",
-    "powerlineScaleX = 1",
-    "powerlineScaleY = 1",
-    "\n",
-    "[buildPlans.bunnit.ligations]",
+    '\n',
+    '[buildPlans.bunnit.metric-override]',
+    'powerlineScaleX = 1',
+    'powerlineScaleY = 1',
+    '\n',
+    '[buildPlans.bunnit.ligations]',
     'inherits = "calt"',
   ],
   [
-    "[buildPlans.bunniq.widths.normal]",
-    "shape = 600",
-    "menu = 5",
+    '[buildPlans.bunniq.widths.normal]',
+    'shape = 600',
+    'menu = 5',
     'css = "normal"',
-    "\n",
-    "[buildPlans.bunniq.metric-override]",
-    "powerlineScaleX = 1",
-    "powerlineScaleY = 1",
-    "\n",
-    "[buildPlans.bunniq.ligations]",
+    '\n',
+    '[buildPlans.bunniq.metric-override]',
+    'powerlineScaleX = 1',
+    'powerlineScaleY = 1',
+    '\n',
+    '[buildPlans.bunniq.ligations]',
     'inherits = "calt"',
   ],
 ];
 
-const rulesNormalList = rulesNormal.join("\n");
-const rulesItalicList = rulesItalic.join("\n");
+const rulesNormalList = rulesNormal.join('\n');
+const rulesItalicList = rulesItalic.join('\n');
 
-let file = "";
+let file = '';
 
 for (let i = 0; i < fontAmount; i++) {
-  file += headers[i].join("\n");
-  file += "\n\n";
+  file += headers[i].join('\n');
+  file += '\n\n';
   file += `[buildPlans.${fontNames[i]}.variants.design]\n`;
   file += rulesNormalList;
-  file += "\n\n";
+  file += '\n\n';
   file += `[buildPlans.${fontNames[i]}.variants.italic]\n`;
   file += rulesItalicList;
-  file += "\n\n";
-  file += footers[i].join("\n");
-  file += "\n\n";
+  file += '\n\n';
+  file += footers[i].join('\n');
+  file += '\n\n';
 }
 
-await Deno.writeTextFile("V7.toml", file);
+await Deno.writeTextFile('V7.toml', file);
