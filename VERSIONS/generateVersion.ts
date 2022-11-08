@@ -34,7 +34,7 @@ const headers: TOML = [
 
 const rulesNormal: TOML = [
   ['capital-d = "more-rounded-serifless"'],
-  ['capital-w = "curly"'],
+  ['capital-w = "straight"'],
   ['capital-z = "curly-serifless"'],
   ['capital-x = "straight-serifless"'],
   ['capital-q = "horizontal-tailed"'],
@@ -127,7 +127,7 @@ const rulesItalic: TOML = [
   ['m = "normal"'],
   ['t = "standard"'],
   ['u = "toothed"'],
-  ['w = "curly"'],
+  ['w = "straight"'],
   ['y = "cursive"'],
   ['z = "curly-serifless"'],
 ];
