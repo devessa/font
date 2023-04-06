@@ -114,7 +114,7 @@ const rulesNormal: TOML = [
   ['punctuation-dot = "square"'],
   ['diacritic-dot = "square"'],
   ['lig-equal-chain = "without-notch"'],
-  ['lig-hypen-chain = "without-notch"'],
+  ['lig-hyphen-chain = "without-notch"'],
 ];
 
 const rulesItalic: TOML = [
