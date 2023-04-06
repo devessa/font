@@ -58,7 +58,7 @@ const rulesNormal: TOML = [
   //  ['g = "single-storey-earless-corner-flat-hook"'],
   ['g = "double-storey"'],
   //  ['g = "single-storey-flat-hook-serifless"'],
-  ['i = "serifed-asymmetric"'],
+  ['i = "hooky"'],
   ['j = "flat-hook-serifed"'],
   ['k = "curly-serifless"'],
   ['l = "tailed-serifed"'],
@@ -66,10 +66,10 @@ const rulesNormal: TOML = [
   ['n = "straight"'],
   ['q = "earless-corner"'],
   ['p = "eared"'],
-  //  ['r = "corner-hooked"'],
-  ['r = "serifless"'],
+  ['r = "corner-hooked"'],
+  // ['r = "serifless"'],
   ['s = "serifless"'],
-  ['t = "standard-short-neck2"'],
+  ['t = "flat-hook-short-neck2"'],
   ['u = "toothed"'],
   ['v = "straight"'],
   ['w = "straight"'],
@@ -111,9 +111,10 @@ const rulesNormal: TOML = [
   ['lig-ltgteq = "slanted"'],
   ['lig-neq = "more-slanted"'],
   ['question = "smooth"'],
-  ['punctuation-dot = "round"'],
-  ['diacritic-dot = "round"'],
+  ['punctuation-dot = "square"'],
+  ['diacritic-dot = "square"'],
   ['lig-equal-chain = "without-notch"'],
+  ['lig-hypen-chain = "without-notch"'],
 ];
 
 const rulesItalic: TOML = [
@@ -145,7 +146,7 @@ const footers: TOML = [
     'powerlineScaleY = 1',
     '\n',
     '[buildPlans.bunni.ligations]',
-    'inherits = "calt"',
+    'inherits = "dlig"',
   ],
   [
     '[buildPlans.bunnit.widths.normal]',
@@ -158,7 +159,7 @@ const footers: TOML = [
     'powerlineScaleY = 1',
     '\n',
     '[buildPlans.bunnit.ligations]',
-    'inherits = "calt"',
+    'inherits = "dlig"',
   ],
   [
     '[buildPlans.bunniq.widths.normal]',
@@ -171,7 +172,7 @@ const footers: TOML = [
     'powerlineScaleY = 1',
     '\n',
     '[buildPlans.bunniq.ligations]',
-    'inherits = "calt"',
+    'inherits = "dlig"',
   ],
 ];
 
