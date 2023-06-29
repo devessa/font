@@ -50,7 +50,7 @@ const rulesNormal: TOML = [
   ['capital-u = "toothless-corner"'],
   ['capital-n = "asymmetric"'],
   ['capital-r = "curly"'],
-  ['a = "single-storey-earless-corner-serifless"'],
+  ['a = "double-storey-serifless"'],
   ['b = "toothed"'],
   ['c = "serifless"'],
   ['d = "toothed-serifless"'],
@@ -89,7 +89,7 @@ const rulesNormal: TOML = [
   ['cyrl-capital-ka = "straight-serifless"'],
   ['cyrl-ka = "straight-serifless"'],
   ['cyrl-capital-u = "straight-turn"'],
-  ['one = "no-base"'],
+  ['one = "no-base-top-cut"'],
   ['two = "curly-neck"'],
   ['three = "two-arcs"'],
   ['four = "semi-open-non-crossing"'],
@@ -150,7 +150,7 @@ const footers: TOML = [
     'powerlineScaleY = 1',
     '\n',
     '[buildPlans.bunni.ligations]',
-    'inherits = "dlig"',
+    // 'inherits = "dlig"',
   ],
   [
     '[buildPlans.bunnit.widths.normal]',
@@ -163,7 +163,7 @@ const footers: TOML = [
     'powerlineScaleY = 1',
     '\n',
     '[buildPlans.bunnit.ligations]',
-    'inherits = "dlig"',
+    // 'inherits = "dlig"',
   ],
   [
     '[buildPlans.bunniq.widths.normal]',
@@ -176,7 +176,7 @@ const footers: TOML = [
     'powerlineScaleY = 1',
     '\n',
     '[buildPlans.bunniq.ligations]',
-    'inherits = "dlig"',
+    // 'inherits = "dlig"',
   ],
 ];
 
