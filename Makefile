@@ -22,3 +22,7 @@ test:
 	@echo -e '\033[3m abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890-=!@#\ %^&*()[]{}\|:;'""'.>/?,< \033[0m'
 	@echo -e '\033[3m\033[1m abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890-=!@#\ %^&*()[]{}\|:;'""'.>/?,< \033[0m'
 	@echo -e ' abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890-=!@#\ %^&*()[]{}\|:;'""'.>/?,< \033[0m'
+	@echo -e ' The quick brown fox jumps over the lazy dog.'
+	@echo -e '\033[3m The quick brown fox jumps over the lazy dog.\033[0m'
+	@echo -e ' THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.'
+	@echo -e '\033[3m THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\033[0m'
