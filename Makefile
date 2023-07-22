@@ -10,10 +10,10 @@ build: clean
 	cd VERSIONS; ./generateVersion.py
 	rm -rf iosevka/private-build-plans.toml
 	cp VERSIONS/$(PLAN).toml iosevka/private-build-plans.toml
-	cd iosevka; npm install; npm run build -- ttf::dreams && cp -r dist/dreams ../; npm run build -- ttf::dreamers && cp -r dist/dreamers ../; npm run build -- ttf::dreaming && cp -r dist/dreaming ../;
+	cd iosevka; npm install; npm run build -- ttf::dreams && cp -r dist/dreams ../; npm run build -- ttf::dreamers && cp -r dist/dreamers ../; npm run build -- ttf::dreamily && cp -r dist/dreamily ../;
 
 clean:
-	rm -rf dreams dreamers dreaming
+	rm -rf dreams dreamers dreamily
 	rm -rf iosevka/dist
 	rm -rf iosevka/.build
 
