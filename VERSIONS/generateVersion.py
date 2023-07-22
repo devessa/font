@@ -12,9 +12,9 @@ spacing = "term"
 serifs = "sans"
 no-cv-ss = true
 export-glyph-names = true"""
-dreamingheader = """[buildPlans.dreaming]
-family = "dreaming"
-spacing = "quasi-proportional-extension-only"
+dreamilyheader = """[buildPlans.dreamily]
+family = "dreamily"
+spacing = "quasi-proportional"
 serifs = "sans"
 no-cv-ss = true
 export-glyph-names = true"""
@@ -146,16 +146,16 @@ powerlineScaleY = 1
 
 [buildPlans.dreamers.ligations]
 """
-footerdreaming = """[buildPlans.dreaming.widths.normal]
+footerdreamily = """[buildPlans.dreamily.widths.normal]
 shape = 600
 menu = 5
 css = "normal"
 
-[buildPlans.dreaming.metric-override]
+[buildPlans.dreamily.metric-override]
 powerlineScaleX = 1
 powerlineScaleY = 1
 
-[buildPlans.dreaming.ligations]
+[buildPlans.dreamily.ligations]
 """
 
 version = "dreams"
@@ -184,15 +184,15 @@ def generate_filenally():
     filenally += "\n\n"
     filenally += footerdreamers
     filenally += "\n\n"
-    filenally += dreamingheader
+    filenally += dreamilyheader
     filenally += "\n\n"
-    filenally += "[buildPlans.dreaming.variants.design]\n"
+    filenally += "[buildPlans.dreamily.variants.design]\n"
     filenally += rulesNormal
     filenally += "\n\n"
-    filenally += "[buildPlans.dreaming.variants.italic]\n"
+    filenally += "[buildPlans.dreamily.variants.italic]\n"
     filenally += rulesItalic
     filenally += "\n\n"
-    filenally += footerdreaming
+    filenally += footerdreamily
     filenally += "\n\n"
     return filenally
 
