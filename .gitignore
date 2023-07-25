@@ -1,7 +1,11 @@
 bunni*
 dream*
 type*
+code*
+term*
 !type.py
+!code.py
+!term.py
 !dreams.py
 VERSIONS/*.toml
 Iosevka-main.zip
