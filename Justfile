@@ -20,6 +20,7 @@ copy:
    cp -r ./type*/ttf ~/.local/share/fonts/type
    cp -r ./code*/ttf ~/.local/share/fonts/code
    cp -r ./term*/ttf ~/.local/share/fonts/term
+   fc-cache -r -f -v
 
 build_type: clean
    cp /tmp/type.toml iosevka/private-build-plans.toml
