@@ -1,6 +1,6 @@
 #!/bin/bash
 
-(which npm || which fonttools) && read -pr "Please enter the shell command to install NPM and Fonttools: " install_command
+(which npm || which ttfautohint) && read -pr "Please enter the shell command to install NPM and ttfautohint: " install_command
 
 [[ $install_command ]] && $install_command
 
