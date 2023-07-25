@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-type_header = """[buildPlans.type]
-family = "type"
-spacing = "quasi-proportional"
+term_header = """[buildPlans.term]
+family = "term"
+spacing = "term"
 serifs = "sans"
 no-cv-ss = true
 export-glyph-names = true"""
@@ -33,8 +33,8 @@ u = "toothless-rounded-serifless"
 w = "straight-flat-top-serifless"
 x = "curly-serifless"
 z = "curly-serifless"
-zero = "slashed-cutout"
-one = "no-base-top-cut"
+zero = "broken-slash"
+one = "no-base"
 two = "straight-neck"
 three = "flat-top"
 six = "closed-contour"
@@ -68,21 +68,21 @@ t = "standard"
 v = "cursive-serifless"
 """
 
-version = "type"
+version = "term"
 f = open("/tmp/" + version + ".toml", "w")
 
 # file-finally
 def generate_filenally():
     filenally = ""
-    filenally += type_header
+    filenally += term_header
     filenally += "\n\n"
-    filenally += "[buildPlans.type.variants.design]"
+    filenally += "[buildPlans.term.variants.design]"
     filenally += normal
     filenally += "\n"
-    filenally += "[buildPlans.type.variants.italic]"
+    filenally += "[buildPlans.term.variants.italic]"
     filenally += italic
     return filenally
 
 f.write(generate_filenally())
-print("[info] generated type.toml")
+print("[info] generated term.toml")
 f.close()

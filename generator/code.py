@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-type_header = """[buildPlans.type]
-family = "type"
-spacing = "quasi-proportional"
+code_header = """[buildPlans.code]
+family = "code"
+spacing = "normal"
 serifs = "sans"
 no-cv-ss = true
 export-glyph-names = true"""
@@ -21,7 +21,7 @@ capital-y = "straight-serifless"
 capital-z = "curly-serifless"
 f = "flat-hook-serifless"
 g = "single-storey-flat-hook-serifless"
-i = "serifless"
+i = "tailed-serifed"
 j = "flat-hook-serifed"
 k = "symmetric-connected-serifless"
 l = "tailed-serifed"
@@ -34,7 +34,7 @@ w = "straight-flat-top-serifless"
 x = "curly-serifless"
 z = "curly-serifless"
 zero = "slashed-cutout"
-one = "no-base-top-cut"
+one = "no-base"
 two = "straight-neck"
 three = "flat-top"
 six = "closed-contour"
@@ -68,21 +68,21 @@ t = "standard"
 v = "cursive-serifless"
 """
 
-version = "type"
+version = "code"
 f = open("/tmp/" + version + ".toml", "w")
 
 # file-finally
 def generate_filenally():
     filenally = ""
-    filenally += type_header
+    filenally += code_header
     filenally += "\n\n"
-    filenally += "[buildPlans.type.variants.design]"
+    filenally += "[buildPlans.code.variants.design]"
     filenally += normal
     filenally += "\n"
-    filenally += "[buildPlans.type.variants.italic]"
+    filenally += "[buildPlans.code.variants.italic]"
     filenally += italic
     return filenally
 
 f.write(generate_filenally())
-print("[info] generated type.toml")
+print("[info] generated code.toml")
 f.close()
