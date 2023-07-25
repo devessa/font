@@ -1,19 +1,28 @@
 .PHONY: build clean copy all test
 PLAN=dreams
+PLAN2=type
 
 all: copy
 
-copy: build
+copy: build_dreams
 	cp -r ./dream*/ttf ~/.local/share/fonts/dream
+	cp -r ./type*/ttf ~/.local/share/fonts/type
 
-build: clean
-	cd VERSIONS; ./generateVersion.py
+build_dreams: build_type
+	cd VERSIONS; ./$(PLAN).py
 	rm -rf iosevka/private-build-plans.toml
 	cp VERSIONS/$(PLAN).toml iosevka/private-build-plans.toml
 	cd iosevka; npm install; npm run build -- ttf::dreams && cp -r dist/dreams ../; npm run build -- ttf::dreamers && cp -r dist/dreamers ../; npm run build -- ttf::dreamily && cp -r dist/dreamily ../;
 
+build_type: clean
+	cd VERSIONS; ./$(PLAN2).py
+	rm -rf iosevka/private-build-plans.toml
+	cp VERSIONS/$(PLAN2).toml iosevka/private-build-plans.toml
+	cd iosevka; npm install; npm run build -- ttf::type && cp -r dist/type ../
+
 clean:
 	rm -rf dreams dreamers dreamily
+	rm -rf type
 	rm -rf iosevka/dist
 	rm -rf iosevka/.build
 
