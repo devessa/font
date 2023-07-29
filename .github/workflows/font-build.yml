@@ -1,5 +1,5 @@
 name: Font Builder
-run-name: build fonts with ${{ github.actor }}
+run-name: build fonts with ${{ github.run_id }}
 on:
   pull_request:
     types:
