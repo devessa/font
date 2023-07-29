@@ -1,0 +1,7 @@
+font change:
+  - generator/*.py
+workflow change:
+  - Justfile
+  - .gitignore
+  - .gitmodules
+  - setup

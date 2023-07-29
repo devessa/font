@@ -1,0 +1,44 @@
+name: Font Builder
+run-name: build fonts with ${{ github.actor }}
+on:
+  pull_request:
+    types:
+      - closed
+    paths:
+      - 'generator/*.py'
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: install just command runner
+        run: snap install --edge --classic just
+      - name: install ttfautohint
+        run: sudo apt-get install ttfautohint
+      - name: initialize submodules
+        run: rf -rm iosevka && git submodule update --init --depth 1
+      - name: npm install just incase
+        run: cd iosevka && npm ci && cd ..
+      - name: build fonts
+        run: just gen && just build_all
+      - name: zip fonts
+        run: zip -q -r fonts.zip type code term
+      - name: create github release
+        id: create_release
+        uses: actions/create-release@v1
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.run_number }}
+          release_name: Build ${{ github.run_number }}
+      - name: upload fonts
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./fonts.zip
+          asset_name: fonts-v${{ github.run_number }}.zip
+          asset_content_type: application/zip
