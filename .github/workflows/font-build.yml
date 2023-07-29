@@ -19,7 +19,7 @@ jobs:
       - name: install ttfautohint
         run: sudo apt-get install ttfautohint
       - name: initialize submodules
-        run: rf -rm iosevka && git submodule update --init --depth 1
+        run: rm -rf iosevka && git submodule update --init --depth 1
       - name: npm install just incase
         run: cd iosevka && npm ci && cd ..
       - name: build fonts
