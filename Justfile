@@ -1,46 +1,38 @@
-alias b := build_all
-alias bty := build_type
-alias bte := build_term
-alias bc := build_code
-alias c := clean_all
+alias ba := build_all
+alias b := build
+alias c := clean
 alias cp := copy
 
+# shows help
 default:
-   just gen && just build_all && just copy
+   @just --list --list-heading "" --list-prefix "  ->  " --justfile {{justfile()}}
 
+# gen -> build_all -> copy
+d:
+   @just gen && just build_all && just copy
+
+# generates toml files used for building
 gen:
-   cd generator; ./gen
+   @cd generator; ./gen
 
-build_all: build_type build_code build_term
+# builds "type", "term", and "code"
+build_all: (build "type") (build "term") (build "code")
 
+# removes iosevka stuff
 prebuild:
-   rm -rf iosevka/dist
-   rm -rf iosevka/build
-   rm -rf iosevka/private-build-plans.toml
+   @rm -rf iosevka/dist
+   @rm -rf iosevka/build
+   @rm -rf iosevka/private-build-plans.toml
 
-clean_type:
-  rm -rf type
-clean_term:
-  rm -rf term
-clean_code:
-  rm -rf code
+# rm -rf {font}
+clean font:
+   @rm -rf {{font}}
 
-clean_all: clean_type clean_term clean_code
+# copies a font to ~/.local/share/{font}
+copy font:
+   @cp -r ./{{font}}*/ttf ~/.local/share/fonts/{{font}}
 
-copy:
-   cp -r ./type*/ttf ~/.local/share/fonts/type || :
-   cp -r ./code*/ttf ~/.local/share/fonts/code || :
-   cp -r ./term*/ttf ~/.local/share/fonts/term || :
-   fc-cache -r -f -v
-
-build_type: prebuild clean_type
-   cp /tmp/type.toml iosevka/private-build-plans.toml
-   cd iosevka; npm run build -- ttf::type && cp -r dist/type ../
-
-build_code: prebuild clean_code
-   cp /tmp/code.toml iosevka/private-build-plans.toml
-   cd iosevka; npm run build -- ttf::code && cp -r dist/code ../
-
-build_term: prebuild clean_term
-   cp /tmp/term.toml iosevka/private-build-plans.toml
-   cd iosevka; npm run build -- ttf::term && cp -r dist/term ../
+# runs through the entire process to build a font.
+build font: prebuild (clean font)
+   @cp /tmp/{{font}}.toml iosevka/private-build-plans.toml
+   @cd iosevka; npm run build -- ttf::{{font}} && cp -r dist/{{font}} ../
