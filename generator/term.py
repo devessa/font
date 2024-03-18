@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 term_header = """[buildPlans.term]
 family = "term"
