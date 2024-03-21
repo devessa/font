@@ -24,12 +24,12 @@ copy:
 
 build_type: clean
    cp /tmp/type.toml iosevka/private-build-plans.toml
-   cd iosevka; npm run build -- ttf::type && cp -r dist/type ../
+   cd iosevka; npx verda -f ./verdafile.mjs ttf::type && cp -r dist/type ../
 
 build_code: clean
    cp /tmp/code.toml iosevka/private-build-plans.toml
-   cd iosevka; npm run build -- ttf::code && cp -r dist/code ../
+   cd iosevka; npx verda -f ./verdafile.mjs ttf::code && cp -r dist/code ../
 
 build_term: clean
    cp /tmp/term.toml iosevka/private-build-plans.toml
-   cd iosevka; npm run build -- ttf::term && cp -r dist/term ../
+   cd iosevka; npx verda -f ./verdafile.mjs ttf::term && cp -r dist/term ../
