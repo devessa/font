@@ -6,7 +6,7 @@ default:
    just gen && just build_all && just copy
 
 gen:
-   cd generator; ./gen
+   cd generator; bash gen
 
 build_all: build_type build_code build_term
 

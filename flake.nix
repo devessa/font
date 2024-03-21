@@ -8,12 +8,15 @@
   outputs = { self, nixpkgs }: {
     packages.x86_64-linux.fontdreams = with nixpkgs.legacyPackages.x86_64-linux; stdenv.mkDerivation {
       name = "fontdreams";
-      src = ./.; # path to your source file
-      buildInputs = [ ttfautohint npm nodejs just python3 ];
+      src = self; # path to your source file
+      buildInputs = [ ttfautohint git nodejs just python3 gnutar ];
+
+      configurePhase = ''
+        tar -xzvf iosevka.tar.gz
+      '';
 
       buildPhase = ''
-        git submodule update --init --depth 1
-        just gen && just build_all
+        just gen && just build_all;
       '';
 
       installPhase = ''
@@ -23,6 +26,6 @@
       '';
     };
 
-    packages.x86_64-linux.default = self.packages.x86_64-linux.myProgram;
+    packages.x86_64-linux.default = self.packages.x86_64-linux.fontdreams;
   };
 }
