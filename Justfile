@@ -6,7 +6,7 @@ default:
    just pull && just gen && just build_all && just copy
 
 pull:
-   git submodule update --init --depth 1]
+   git submodule update --init --depth 1
    cd iosevka; npm install
 
 gen:
