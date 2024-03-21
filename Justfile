@@ -3,7 +3,10 @@ alias c := clean
 alias cp := copy
 
 default:
-   just gen && just build_all && just copy
+   just pull && just gen && just build_all && just copy
+
+pull:
+   git submodule update --init --depth 1
 
 gen:
    cd generator; bash gen
