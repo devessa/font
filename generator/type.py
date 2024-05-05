@@ -9,7 +9,6 @@ exportGlyphNames = true"""
 
 normal = """
 capital-d = "standard-serifless"
-capital-d = "standard-serifless"
 capital-g = "toothless-corner-serifless-hooked"
 capital-i = "short-serifed"
 capital-j = "serifless"
