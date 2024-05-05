@@ -9,6 +9,7 @@ exportGlyphNames = true"""
 
 normal = """
 capital-d = "standard-serifless"
+capital-d = "standard-serifless"
 capital-g = "toothless-corner-serifless-hooked"
 capital-i = "short-serifed"
 capital-j = "serifless"
@@ -19,7 +20,9 @@ capital-r = "standing-serifless"
 capital-x = "curly-serifless"
 capital-y = "straight-serifless"
 capital-z = "curly-serifless"
+a = "single-storey-earless-corner-serifless"
 f = "flat-hook-serifless"
+g = "single-storey-serifless"
 g = "single-storey-serifless"
 i = "serifless"
 j = "flat-hook-serifed"
@@ -73,6 +76,7 @@ v = "cursive-serifless"
 
 version = "type"
 f = open("/tmp/" + version + ".toml", "w")
+f = open("/tmp/" + version + ".toml", "w")
 
 # file-finally
 def generate_filenally():
@@ -87,5 +91,6 @@ def generate_filenally():
     return filenally
 
 f.write(generate_filenally())
+print("[info] generated type.toml")
 print("[info] generated type.toml")
 f.close()

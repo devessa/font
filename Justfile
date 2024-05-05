@@ -1,39 +1,38 @@
-alias b := build_all
+alias ba := build_all
+alias b := build
 alias c := clean
 alias cp := copy
 
+# shows help
 default:
-   just pull && just gen && just build_all && just copy
+   @just --list --list-heading "" --list-prefix "  ->  " --justfile {{justfile()}}
 
-pull:
-   git submodule update --init --depth 1
-   cd iosevka; npm install
+# gen -> build_all -> copy
+d:
+   @just gen && just build_all && just copy
 
+# generates toml files used for building
 gen:
-   cd generator; bash gen
+   @cd generator; ./gen
 
-build_all: build_type build_code build_term
+# builds "type", "term", and "code"
+build_all: (build "type") (build "term") (build "code")
 
-clean:
-   rm -rf type code term
-   rm -rf iosevka/dist
-   rm -rf iosevka/build
-   rm -rf iosevka/private-build-plans.toml
+# removes iosevka stuff
+prebuild:
+   @rm -rf iosevka/dist
+   @rm -rf iosevka/build
+   @rm -rf iosevka/private-build-plans.toml
 
-copy:
-   cp -r ./type*/TTF ~/.local/share/fonts/type
-   cp -r ./code*/TTF ~/.local/share/fonts/code
-   cp -r ./term*/TTF ~/.local/share/fonts/term
-   fc-cache -r -f -v
+# rm -rf {font}
+clean font:
+   @rm -rf {{font}}
 
-build_type: clean
-   cp /tmp/type.toml iosevka/private-build-plans.toml
-   cd iosevka; npx verda -f ./verdafile.mjs ttf::type && cp -r dist/type ../
+# copies a font to ~/.local/share/{font}
+copy font:
+   @cp -r ./{{font}}*/ttf ~/.local/share/fonts/{{font}}
 
-build_code: clean
-   cp /tmp/code.toml iosevka/private-build-plans.toml
-   cd iosevka; npx verda -f ./verdafile.mjs ttf::code && cp -r dist/code ../
-
-build_term: clean
-   cp /tmp/term.toml iosevka/private-build-plans.toml
-   cd iosevka; npx verda -f ./verdafile.mjs ttf::term && cp -r dist/term ../
+# runs through the entire process to build a font.
+build font: prebuild (clean font)
+   @cp /tmp/{{font}}.toml iosevka/private-build-plans.toml
+   @cd iosevka; npm run build -- ttf::{{font}} && cp -r dist/{{font}} ../
